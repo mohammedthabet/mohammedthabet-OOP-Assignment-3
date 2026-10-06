@@ -11,3 +11,17 @@ if (student != null)
 store.Remove(1);
 
 Console.WriteLine($"Students count: {store.GetAll().Count}");
+
+var courseStore = new CourseStore();
+
+courseStore.Add(new Course
+{
+    Id = 1,
+    Title = "C#",
+    Price = 1500m
+});
+
+var course = courseStore.GetById(1);
+
+if (course != null)
+    Console.WriteLine($"{course.Id}: {course.Title} - {course.Price}");
