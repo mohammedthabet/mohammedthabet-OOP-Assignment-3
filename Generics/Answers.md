@@ -19,3 +19,17 @@ The main difference is the type they store. `StudentStore` works with `Student` 
 ### Why does the compiler reject it?
 
 `Store<T>` can currently accept any type as `T`. The compiler therefore cannot assume that every possible type has an `Id` property. When the code tries to access `item.Id`, there is no constraint or contract telling the compiler that `T` must provide an `Id`.
+
+## Step 7
+
+### Why does Store<string> not compile?
+
+`Store<T>` has the constraint `where T : IHasId`. This means that any type used with `Store<T>` must implement `IHasId`.
+
+`Student` and `Course` implement `IHasId`, so they can be used with the store. `string` does not implement `IHasId`, so `Store<string>` is rejected by the compiler.
+
+## Final Research Question
+
+The common name for the kind of class built in Steps 4 and 5 is a **generic repository**.
+
+It provides a reusable abstraction for storing and retrieving different entity types while using a common contract such as `IHasId`.
