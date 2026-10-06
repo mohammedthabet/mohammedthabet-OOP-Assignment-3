@@ -17,8 +17,13 @@ I created an abstract `ReportExporter` base class that contains the common `Expo
 I used the Template Method pattern because the exporters follow the same algorithm in the same order while only one step varies. This removes duplication while keeping the workflow defined in one place.
 
 ---
+- Why is an abstract class a better fit than an interface here?
+
+An abstract class is a better fit because the exporters share both a common algorithm and reusable implementation. `ReportExporter` can implement the shared `Export`, `Load`, `Validate`, and `Save` behavior once while leaving only `Format` abstract for subclasses to customize. An interface would define a contract, but it would not naturally represent this shared base implementation and fixed workflow as clearly as the abstract class.
+
 
 ## Enrollment
+
 
 - What was the problem?
 

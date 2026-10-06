@@ -4,7 +4,7 @@
 
 ## BlockedUsers
 
-- Time complexity before: O(n × m)
+- Time complexity before: O(n * m)
 - Time (ms) before: 23 ms
 - What did you change?
 
