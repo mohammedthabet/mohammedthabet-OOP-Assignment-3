@@ -1,5 +1,4 @@
-﻿var store = new StudentStore();
-
+﻿var store = new Store<Student>();
 store.Add(new Student { Id = 1, Name = "Mohamed" });
 store.Add(new Student { Id = 2, Name = "Ahmed" });
 
@@ -12,7 +11,7 @@ store.Remove(1);
 
 Console.WriteLine($"Students count: {store.GetAll().Count}");
 
-var courseStore = new CourseStore();
+var courseStore = new Store<Course>();
 
 courseStore.Add(new Course
 {
